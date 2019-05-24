@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+     div {
+            font-family: Gill Sans Ultra Bold;
+  background-color:#369b82;
+  width: 300px;
+  border: 25px solid #702c44;
+  padding: 25px;
+  margin: 25px;
+  text-align: center;
+  position:center;
+}
+h1{color:#f7f7f9;text-align: center;}
+        h2{color:azure; text-align: center;}
+        form{text-align: center}
+        legend{text-align: center}
+    a:link, a:visited {
+  background-color: azure;
+  color: black;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+    </style>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script>
+var req;
+function fun1()
+{
+	var url="register.html";
+	if(window.XMLHttpRequest) req=new XMLHttpRequest();
+	else if(window.ActiveXObject) req=new ActiveXObject("Microsoft.XMLHTTP");
+	try
+	{
+	req.onreadystatechange=function()
+	{
+		if(req.readyState==4)
+			{
+			var val=req.responseText;
+            document.getElementById("id").innerHTML=val;
+			}
+	}
+	req.open("POST",url,true);
+	req.send(null);
+	}
+	catch(e)
+	{
+		alert("Unable to connect server");
+	}
+}
+form{text-align:left}
+</script>
+</head>
+<body bgcolor='#9cd6d8'>
+<form>
+    <div>
+<h1>ABC Bank</h1>
+<h2>Track ID</h2>
+<a href="track.html">click me</a>
+<!-- 
+<form>
+<input type="button" onclick="fun1()" value="Click me">
+</form>
+ -->
+<br>
+<h2>Create Application</h2>
+<a href="register.html">click me</a>
+<h2>Admin Login</h2>
+<a href="admin.html">click me</a>
+</div>
+</form>
+<span id="id"></span>
+</body>
+</html>

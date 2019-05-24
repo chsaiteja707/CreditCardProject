@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+function fun(){
+    //document.write("hai");
+                window.location="forgot.html"
+}
+</script>
+<style>
+     div {
+            font-family: Gill Sans Ultra Bold;
+  background-color:#369b82;
+  width: 300px;
+  border: 25px solid #702c44;
+  padding: 25px;
+  margin: 25px;
+  text-align: center;
+  position:center;
+}
+h1{color:#f7f7f9;text-align: center;}
+        h2{color:azure; text-align: center;}
+        form{text-align: center}
+        legend{text-align: center}
+    a:link, a:visited {
+  background-color: azure;
+  color: black;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+    </style>
+<style type="text/css">
+			.reqError{
+				color: black; /*Red Color*/
+				
+			}
+		</style>
+		<script type="text/javascript">
+			//function to check validation (Required field)
+			function checkReqFields(){
+				var returnValue;
+				var name=document.getElementById("txtName").value;
+				
+				
+				var pas=document.getElementById("pass").value;
+				
+				
+				returnValue=true;
+				if(name.trim()==""){
+					document.getElementById("reqTxtName").innerHTML="* Name is required.";
+					returnValue=false;
+				}
+				if(pas.trim()==""){
+					document.getElementById("reqTxtpass").innerHTML="* Password is required.";
+					returnValue=false;
+				}
+								
+										
+				return returnValue;
+			}
+		function myFunction() {
+ 		 var x = document.getElementById("pass");
+  		if (x.type === "password") {
+    		x.type = "text";
+  		} else {
+   		 x.type = "password";
+ 		}
+			}
+		</script>
+ 
+
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body bgcolor='#818c9e'>
+<form action="servlet2"  onsubmit="return checkReqFields()"  method="post">
+<div>
+<h1>ABC Bank</h1>
+<h2>Track ID</h2>
+<h1>Enter SignID</h1>
+<input type="text" id="txtName" name="signid">
+<span id="reqTxtName" class="reqError"></span>	
+<h1>Password</h1>
+<input type="password" id="pass" name="pwd"><br>
+<span id="reqTxtpass" class="reqError"></span>
+<h6><input type="checkbox" onclick="myFunction()">Show Password</h6>
+<br>
+<input type="submit" value="signin" name="signin" >
+<input type="button" value="forgot" name="forgot" onclick="fun() ">
+</div>
+</form>
+</script>
+</body>
+</html>
+

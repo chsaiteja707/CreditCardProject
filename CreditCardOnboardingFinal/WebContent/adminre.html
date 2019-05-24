@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style type="text/css">
+        h1{color:#f7f7f9;text-align: center;}
+        h2{color:azure; text-align: center;}
+        h3{color:azure; text-align: left;}
+        form{text-align: center}
+        legend{text-align: center}
+        div {
+            font-family: Gill Sans Ultra Bold;
+  background-color:#369b82;
+  width: 500px;
+  border: 25px solid #702c44;
+  padding: 25px;
+  margin: 25px;
+  position: center;
+}
+.select-selected {
+  background-color: blue;
+}
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+.content {
+  max-width: 450px;
+  margin: auto;
+ /* background: white;*/
+  padding: 10px;
+  margin-top:45px;
+}
+span{
+position:relative; 
+
+}
+form{text-align:left}
+    
+   
+
+
+</style>
+<style type="text/css">
+.reqError{
+color:black; 
+				
+}
+</style>
+
+<script type="text/javascript">
+			//function to check validation (Required field)
+			function checkReqFields(){
+				var returnValue;
+				var name=document.getElementById("txtName").value;
+				
+				var namee=document.getElementById("txtName1").value;
+				var age=document.getElementById("txtage").value;
+				
+				
+				var uid=document.getElementById("u").value;
+				
+				
+				returnValue=true;
+				if(name.trim()==""){
+					document.getElementById("reqTxtName").innerHTML="* Name is required.";
+					returnValue=false;
+				}
+				if(namee.trim()==""){
+					document.getElementById("reqTxtName1").innerHTML="* last Name is required.";
+					returnValue=false;
+				}
+				if(age.trim()==""){
+					document.getElementById("reqTxtage").innerHTML="* age is required.";
+					returnValue=false;
+				}
+				
+				
+				if(uid.trim()==""){
+					document.getElementById("reqTxtuid").innerHTML="* UID number is required.";
+					returnValue=false;
+				}
+				
+				
+										
+				return returnValue;
+			}
+</script>
+</head>
+<body bgcolor='#818c9e'>
+<form action="servlet4" onsubmit="return checkReqFields()" method="post">
+
+                                <div class="content">
+                                     <legend><h1 >ABC BANK</h1></legend>
+                                     <h1>Admin Entry Form</h1>
+        <h3><label>Enter First name</h3></label>
+        <input type="text"  id="txtName" name="fname" pattern="(?=.*[a-z])(?=.*[A-Z]).{3,}" title="Must contain at least  one uppercase and lowercase letter, and at least 3 or more characters" maxlength="50"/>
+		<span id="reqTxtName" class="reqError"></span>	
+        <h3><label>Enter Last name</h3></label>
+        <input type="text"  id="txtName1" name="lname" >
+		<span id="reqTxtName1" class="reqError"></span>
+        <h3><label> Enter the age</h3></label>
+        <input type="text"  id="txtage" name="age" >
+		<span id="reqTxtage" class="reqError"></span><br>
+	<h3><label>select gender</h3></label>
+       	 <class="custom-select" style="width:70px;">
+		<select type="text" name="gender">
+		<option value="male">Male</option>
+		<option value="female">Female</option>
+		<option value="others">Others</option>
+		</select><br>	
+		
+        <h3><label>Enter UID</label></h3>
+        <input type="text" id="u" name="uid" >
+<span id="reqTxtuid" class="reqError"></span><br><br>
+        <input type="submit" value="register">
+        </form>
+        </div>
+
+</body>
+</html>
